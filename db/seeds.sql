@@ -1,11 +1,11 @@
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("double-double", 1);
+VALUES ("double-double", true);
 
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("beyond burger", 0);
+VALUES ("beyond burger", false);
 
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("shack burger", 1);
+VALUES ("shack burger", true);
 
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("charburger", 0);
+VALUES ("charburger", false);
