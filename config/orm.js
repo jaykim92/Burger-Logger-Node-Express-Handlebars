@@ -50,14 +50,6 @@ const orm = {
         });
     },
     // function to insert a new row
-    // insertOne: (tableInput, burgerInput, callback) => {
-    //     const query = `INSERT INTO ${tableInput} SET burger_name = ${burgerInput};`
-    //     connection.query(query, (err, res) => {
-    //         if (err) throw err;
-    //         callback(res);
-    //     });
-    // },
-
     insertOne: function(table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
     
@@ -67,8 +59,6 @@ const orm = {
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
         queryString += ") ";
-    
-        console.log(queryString);
     
         connection.query(queryString, vals, function(err, result) {
           if (err) {
@@ -80,30 +70,12 @@ const orm = {
     },
     // function to update whether a burger has been devoured
     updateOne: (tableInput, condition, callback) => {
-      console.log(condition)
         const query = `UPDATE ${tableInput} SET devoured = 1 WHERE ${condition};`;
         connection.query(query, (err, res) => {
             if (err) throw err;
             callback(res);
         });
     }
-    // updateOne: function(table, objColVals, condition, cb) {
-    //     var queryString = "UPDATE " + table;
-    
-    //     queryString += " SET ";
-    //     queryString += objToSql(objColVals);
-    //     queryString += " WHERE ";
-    //     queryString += condition;
-    
-    //     console.log(queryString);
-    //     connection.query(queryString, function(err, result) {
-    //       if (err) {
-    //         throw err;
-    //       }
-    
-    //       cb(result);
-    //     });
-    // }
 };
 
 // export orm to models

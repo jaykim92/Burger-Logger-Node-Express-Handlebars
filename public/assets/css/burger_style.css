@@ -1,7 +1,4 @@
-h1 {
-    font-style: italic;
-}
-
-.container {
-    background-color: khaki;
+.main {
+    background-color: gold;
+    padding-bottom: 3rem;
 }
